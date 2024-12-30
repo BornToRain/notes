@@ -22,8 +22,8 @@ pcl1.13.0版本需要 *<vtkMuteLock.h>*,9.2.6往后版本已经删除.
 git clone -b v9.2.6 --recursive https://gitlab.kitware.com/vtk/vtk.git ~/vtk
 
 cd ~/vtk && mkdir build && cd build
-# 系统如果是高版本gcc或clang,会报错.
-ccmake -G Ninja -DCMAKE_BUILD_TYPE=Release -DCMAKE_CXX_COMPILER=/usr/bin/g++-9 -DCMAKE_C_COMPILER=/usr/bin/gcc-9 ..
+# 如果高版本gcc或clang报错,切换到低版本.
+ccmake -G Ninja -DCMAKE_BUILD_TYPE=Release ..
 ```
 
 弹出页面按c生成,*VTK_GROUP_ENABLE_Qt*选YES.
@@ -73,4 +73,21 @@ sudo cmake --install .
 sudo cmake --uninstall .
 ```
 
+# boost1.80
+
+[官网](https://boostorg.jfrog.io/artifactory/main/release/1.80.0/source/)下载tar包
+
+## 设置
+
+```shell
+tar xvf boost_1_80_0.tar.gz
+
+cd ~/boost_1_80_0 && ./bootstrap.sh
+```
+
+## 编译
+```shell
+./b2
+sudo ./b2 install
+```
 
