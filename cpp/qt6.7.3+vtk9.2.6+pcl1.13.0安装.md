@@ -2,6 +2,11 @@
 
 直接用在线安装即可,可能会缺少以下组件,需要手动安装.
 
+```shell
+设置环境变量
+export Q
+```
+
 ## 可能缺少库
 
 ```shell
@@ -32,12 +37,12 @@ ccmake -G Ninja -DCMAKE_BUILD_TYPE=Release -DCMAKE_CXX_COMPILER=/usr/bin/g++-9 -
 ```shell
 cmake .
 cmake --build .
-cmake --install .
+sudo cmake --install .
 ```
 
 ## 卸载
+sudo cmake --uninstall .
 ```shell
-cmake --uninstall .
 ```
 
 # pcl1.13.0
@@ -60,12 +65,12 @@ ccmake -G Ninja -DCMAKE_BUILD_TYPE=Release -DCMAKE_CXX_STANDARD=17 -DWITH_QT=QT6
 ```shell
 cmake .
 cmake --build .
-cmake --install .
+sudo cmake --install .
 ```
 
 ## 卸载
 ```shell
-cmake --uninstall .
+sudo cmake --uninstall .
 ```
 
 
